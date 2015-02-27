@@ -6,7 +6,7 @@ from polls.models import Question
 
 class most_recent(CascadeFilter):
 
-    class filter(qand):
+    class Filter(qand):
         text = Q(question_text__icontains='what')
 
         day_ago = date.today() - timedelta(days=1)

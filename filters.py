@@ -42,9 +42,7 @@ class FiltersDeclaredMeta(DeclaredMeta, abc.ABCMeta):
         return ', '.join(cls._declared_filters.keys())
 
 
-class DeclaredFilters(metaclass=FiltersDeclaredMeta):
-
-    default_mark = qsfilter
+class DeclaredFilters(metaclass=FiltersDeclaredMeta, extract=qsfilter):
 
     @classmethod
     def filter(cls):
